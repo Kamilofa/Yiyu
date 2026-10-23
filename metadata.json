@@ -1,0 +1,6 @@
+{
+  "name": "Les Saveurs d'Afrique - Restaurant Camerounais",
+  "description": "Restaurant gastronomique camerounais Les Saveurs d'Afrique. Menu en ligne, réservation de table, commande à emporter & livraison avec Orange Money (698621438), galerie photos et avis clients.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

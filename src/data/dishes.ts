@@ -1,0 +1,396 @@
+import { Dish } from '../types/restaurant';
+
+export const DISHES: Dish[] = [
+  // --- MENUS TYPIQUES DU CAMEROUN (FORMULES COMPLÈTES) ---
+  {
+    id: 'menu-terroir-sawa',
+    name: 'Menu Complet Terroir Sawa (Littoral)',
+    category: 'menus_terroir',
+    region: 'Littoral (Douala & Wouri)',
+    description: 'Le grand festin du Wouri : Pastels dorés au poisson fumé en entrée + Grand Ndolè Royal aux crevettes fraîches et bœuf avec Miondo chaud ou Plantain tapé + Carafe de Jus de Foléré bio + Beignets soufflés au caramel de coco.',
+    price: 8500,
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'moyen',
+    prepTime: '25-30 min',
+    popular: true,
+    chefSpecial: true,
+    availableAccompaniments: ['Miondo tressé de Douala', 'Bâton de manioc (Bobolo)', 'Plantains mûrs tapés (Alloco)'],
+    tags: ['Menu Complet 4 Services', 'Ndolè Royal', 'Foléré Bio', 'Spécialité Sawa']
+  },
+  {
+    id: 'menu-grassfield-ouest',
+    name: 'Menu Complet Grassfield (Hauts-Plateaux de l\'Ouest)',
+    category: 'menus_terroir',
+    region: 'Ouest Bamiléké & Bamenda',
+    description: 'Immersion au cœur des chefferies : Beignets croustillants BHB + Grand Kondrè de chèvre mijoté à l\'huile rouge OU Taro pilé à la sauce jaune d\'Achu + Jus de gingembre frais + Banane douce rôtie au miel de savane.',
+    price: 8000,
+    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'tres_pimente',
+    prepTime: '25 min',
+    popular: true,
+    chefSpecial: true,
+    availableAccompaniments: ['Plantains vapeurs inclus dans le Kondrè', 'Taro pilé traditionnel', 'Bobolo'],
+    tags: ['Menu Traditionnel', 'Kondrè de Chèvre', 'Achu Bamenda', 'Épices de l\'Ouest']
+  },
+  {
+    id: 'menu-braise-kribi',
+    name: 'Menu Complet Braise Océane de Kribi',
+    category: 'menus_terroir',
+    region: 'Côte Océane (Kribi & Youpwè)',
+    description: 'La magie des débarcadères de pêcheurs : Salade croquante de gombo mariné au citron vert + Bar entier frais de 800g braisé au feu de bois et poivre de Penja + Bobolo chaud + Cocktail maison Le Wouri Sunset.',
+    price: 9500,
+    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'tres_pimente',
+    prepTime: '30 min',
+    popular: true,
+    chefSpecial: true,
+    availableAccompaniments: ['Bobolo fumant de Douala', 'Miondo chaud', 'Frites de plantains tapés'],
+    tags: ['Menu Braise', 'Bar Entier 800g', 'Poivre de Penja', 'Frais du Jour']
+  },
+  {
+    id: 'menu-foret-beti',
+    name: 'Menu Complet Forêt Équatoriale (Beti & Centre)',
+    category: 'menus_terroir',
+    region: 'Centre & Sud (Yaoundé / Ébolowa)',
+    description: 'L\'hommage aux forêts du Centre et Sud : Velouté de courge pistache en entrée + Okok traditionnel au jus de noix de palme et pâte d\'arachide grillée (ou Sanga au maïs frais) + Bâtons de manioc + Jus d\'ananas victoria pressé.',
+    price: 7500,
+    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'doux',
+    prepTime: '20 min',
+    popular: true,
+    availableAccompaniments: ['Manioc vapeur du village', 'Bobolo', 'Plantains mûrs bouillis'],
+    tags: ['Menu Beti', 'Okok Sucré/Salé', 'Sanga', 'Jus de Palme Pur']
+  },
+  {
+    id: 'menu-grand-nord-savane',
+    name: 'Menu Complet Grand Nord & Savane Sahélienne',
+    category: 'menus_terroir',
+    region: 'Grand Nord (Garoua & Maroua)',
+    description: 'Les délices sahéliens : Assiette de brochettes Suya Kan-kan pimentées aux oignons rouges + Couscous de maïs blanc avec sauce gombo séché et viande de bœuf séchée Kilichi + Grand verre de Nectar de Baobab.',
+    price: 7500,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'moyen',
+    prepTime: '20 min',
+    popular: false,
+    availableAccompaniments: ['Couscous de maïs blanc', 'Riz cassé sauté', 'Frites de patates'],
+    tags: ['Menu Grand Nord', 'Suya Kan-kan', 'Kilichi', 'Nectar de Baobab']
+  },
+
+  // --- PLATS ROYAUX TYPIQUEMENT CAMEROUNAIS ---
+  {
+    id: 'ndole-royal',
+    name: 'Ndolè Royal Camerounais',
+    category: 'royaux',
+    region: 'Littoral (Sawa)',
+    description: 'Le joyau national : feuilles de ndolè fraîches méticuleusement lavées et mijotées avec pâte d\'arachide onctueuse, écrevisses fumées, généreuses crevettes royales fraîches et tendres morceaux de bœuf.',
+    price: 6500,
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'moyen',
+    prepTime: '25-30 min',
+    popular: true,
+    chefSpecial: true,
+    availableAccompaniments: ['Miondo de Douala', 'Bâton de manioc (Bobolo)', 'Plantains mûrs vapeur', 'Plantains frits (Alloco)'],
+    tags: ['Plat National Culte', 'Crevettes Royales', 'Arachides']
+  },
+  {
+    id: 'poulet-dg',
+    name: 'Poulet DG (Directeur Général)',
+    category: 'royaux',
+    region: 'Ouest & Yaoundé',
+    description: 'Cuisiné selon la tradition des grands banquets camerounais : morceaux de poulet fermier doré, rondelles généreuses de plantains mûrs fondants, carottes, haricots verts, poivrons et épices du terroir mijotés à cœur.',
+    price: 7000,
+    image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'doux',
+    prepTime: '20-25 min',
+    popular: true,
+    availableAccompaniments: ['Déjà copieusement garni de plantains', 'Riz blanc parfumé', 'Frites de patate douce'],
+    tags: ['Incontournable', 'Festif', 'Gourmand']
+  },
+  {
+    id: 'kondre-chevre',
+    name: 'Kondrè Traditionnel de Chèvre aux Épices de l\'Ouest',
+    category: 'royaux',
+    region: 'Hauts-Plateaux (Bamiléké)',
+    description: 'Ragoût festif ancestral préparé pour les grandes cérémonies : bananes plantains entières mijotées avec de la viande de chèvre fondante dans une sauce onctueuse à l\'huile rouge de palme, djansang, poivre blanc et aromates de Bafoussam.',
+    price: 6500,
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'moyen',
+    prepTime: '25 min',
+    popular: true,
+    chefSpecial: true,
+    availableAccompaniments: ['Bananes plantains mijotées dans la sauce', 'Bobolo supplémentaire', 'Miondo'],
+    tags: ['Plat des Chefferies', 'Viande de Chèvre', 'Huile Rouge de Palme']
+  },
+  {
+    id: 'taro-sauce-jaune',
+    name: 'Taro Pilé & Sauce Jaune d\'Achu',
+    category: 'royaux',
+    region: 'Nord-Ouest (Bamenda)',
+    description: 'Taro violet pilé minute à la texture élastique parfaite, servi dans un volcan fumant de sauce jaune Achu enrichie de 12 épices ancestrales médicinales, kanga, tripes de bœuf et piment rouge frais.',
+    price: 6500,
+    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'tres_pimente',
+    prepTime: '25-30 min',
+    chefSpecial: true,
+    availableAccompaniments: ['Inclus avec le taro pilé', 'Morceau de viande ou kanga supplémentaire'],
+    tags: ['Patrimoine Bamenda', '12 Épices Achu', 'Sauce Jaune Authentique']
+  },
+  {
+    id: 'koki-grand-mere',
+    name: 'Koki Royal à l\'Huile de Palme Rouge en Feuilles',
+    category: 'royaux',
+    region: 'Bamiléké (Ouest)',
+    description: 'Pâte veloutée de haricots koki battue à la main avec de l\'eau tiède, relevée à l\'huile rouge pure du village et piments doux, cuite à l\'étouffée vapeur dans de véritables feuilles de bananier.',
+    price: 4500,
+    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'moyen',
+    prepTime: '15-20 min',
+    vegetarian: true,
+    popular: true,
+    availableAccompaniments: ['Plantains mûrs vapeur', 'Manioc vapeur', 'Patate douce bouillie'],
+    tags: ['Végétarien', 'Cuisson Feuilles de Bananier', 'Huile Rouge Pure']
+  },
+  {
+    id: 'eru-waterleaf',
+    name: 'Eru & Waterleaf au Bœuf Fumé & Kanda',
+    category: 'royaux',
+    region: 'Sud-Ouest (Manyu)',
+    description: 'Feuilles d\'eru sauvages finement hachées alliées aux feuilles d\'épinard d\'Afrique (waterleaf), morceaux de peau de bœuf fondante (kanda), bœuf fumé et écrevisses du littoral arrosés d\'huile rouge.',
+    price: 6000,
+    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'tres_pimente',
+    prepTime: '20-25 min',
+    popular: true,
+    availableAccompaniments: ['Waterfufu traditionnel', 'Garri jaune du village', 'Plantain vapeur'],
+    tags: ['Recette Traditionnelle', 'Viande Fumée', 'Sud-Ouest']
+  },
+  {
+    id: 'okok-traditionnel',
+    name: 'Okok Traditionnel au Suc de Noix de Palme & Arachides',
+    category: 'royaux',
+    region: 'Centre & Sud (Beti)',
+    description: 'Feuilles d\'okok (gnetum) finement ciselées et pilées, cuites lentement dans l\'extrait onctueux de noix de palme fraîches et pâte d\'arachide grillée artisanale. Légèrement sucré ou salé selon la tradition.',
+    price: 5500,
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'doux',
+    prepTime: '20 min',
+    popular: true,
+    availableAccompaniments: ['Bâton de manioc (Bobolo)', 'Manioc doux vapeur', 'Plantains vapeur'],
+    tags: ['Recette Ancestrale Beti', 'Noix de Palme Fraîche', 'Arachides Grillées']
+  },
+  {
+    id: 'mbongo-tchobi-capitaine',
+    name: 'Mbongo Tchobi au Capitaine Sauvage (Sauce Noire)',
+    category: 'royaux',
+    region: 'Littoral (Bassa)',
+    description: 'La mystérieuse et sublime sauce noire camerounaise préparée à partir d\'écorces brûlées de mbongo et de pèbè sauvage, mijotée avec un beau tronçon de capitaine d\'eau douce frais.',
+    price: 7000,
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'moyen',
+    prepTime: '25 min',
+    chefSpecial: true,
+    availableAccompaniments: ['Bobolo chaud', 'Miondo', 'Riz blanc', 'Bananes plantains vapeur'],
+    tags: ['Sauce Noire Bassa', 'Écorce de Mbongo', 'Capitaine Frais']
+  },
+  {
+    id: 'sanga-beti',
+    name: 'Sanga Traditionnel au Maïs Frais & Feuilles de Zom',
+    category: 'royaux',
+    region: 'Centre (Lékié / Yaoundé)',
+    description: 'Plat doux et réconfortant typique des familles du Centre : grains de maïs frais pilés, feuilles de morelle noire (zom) et pulpe soyeuse de noix de palme cuits à petit feu.',
+    price: 4500,
+    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'doux',
+    prepTime: '20 min',
+    vegetarian: true,
+    availableAccompaniments: ['Se déguste traditionnellement seul', 'Sucre de canne en option'],
+    tags: ['Spécialité Beti', 'Maïs Frais', 'Doux & Velouté']
+  },
+
+  // --- BRAISES & GRILLADES DE KRIBI & YOUPWÈ ---
+  {
+    id: 'poisson-braise-kribi',
+    name: 'Bar Entier Braisé façon Kribi & Youpwè',
+    category: 'braises',
+    region: 'Côte Océane (Kribi)',
+    description: 'Bar frais entier de 800g mariné 12h au poivre blanc de Penja IGP, djansang, ail sauvage et rondelles, grillé lentement à la braise de charbon de bois. Servi avec sauce pimentée maison.',
+    price: 8500,
+    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'tres_pimente',
+    prepTime: '30-35 min',
+    popular: true,
+    chefSpecial: true,
+    availableAccompaniments: ['Bobolo chaud', 'Miondo fumant', 'Plantains tapés frits', 'Frites de manioc'],
+    tags: ['Spécialité Braise', 'Poivre de Penja', 'Frais du Jour']
+  },
+  {
+    id: 'poulet-braise-village',
+    name: 'Demi-Poulet Fermier Braisé au Feu de Bois',
+    category: 'braises',
+    region: 'Yaoundé (Centre)',
+    description: 'Poulet de brousse tendre et parfumé, badigeonné de notre marinade secrète à la moutarde locale, poivre sauvage et aromates, grillé au barbecue de braises intenses.',
+    price: 5500,
+    image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'moyen',
+    prepTime: '25 min',
+    popular: true,
+    availableAccompaniments: ['Plantains frits (Alloco)', 'Bâton de manioc (Bobolo)', 'Frites de patate douce'],
+    tags: ['Braise Authentique', 'Poulet Fermier', 'Mariné 24h']
+  },
+  {
+    id: 'suya-kankan-garoua',
+    name: 'Brochettes Suya Kan-kan Pimentées de Garoua',
+    category: 'braises',
+    region: 'Grand Nord (Garoua & Ngaoundéré)',
+    description: 'Fines lamelles de filet de bœuf enfilées sur brochettes de bambou, enrobées généreusement de poudre d\'épices kan-kan (gingembre, arachide torréfiée, ail, piments) et grillées sur braises ardentes.',
+    price: 4500,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'tres_pimente',
+    prepTime: '15 min',
+    popular: true,
+    availableAccompaniments: ['Oignons rouges émincés & piment kan-kan', 'Plantains tapés', 'Bobolo'],
+    tags: ['Spécialité Suya', 'Poudre Kan-kan', 'Bœuf Tendre']
+  },
+  {
+    id: 'porc-braise-mbongo',
+    name: 'Porc Braisé au Barbecue & Condiments du Terroir',
+    category: 'braises',
+    region: 'Littoral & Ouest',
+    description: 'Côtes et échine de porc marinées aux aromates sauvages, piment vert et moutarde locale, lentement dorées sur grille au feu de bois pour un croustillant irrésistible.',
+    price: 6000,
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'moyen',
+    prepTime: '25 min',
+    availableAccompaniments: ['Bobolo', 'Miondo', 'Riz blanc', 'Bananes plantains frits'],
+    tags: ['Braise Porc', 'Croustillant & Moelleux', 'Marinade Maison']
+  },
+
+  // --- ENTRÉES & TAPAS DU TERROIR ---
+  {
+    id: 'beignets-haricot-bhb',
+    name: 'Assiette BHB (Beignets - Haricot - Bouillie)',
+    category: 'entrees',
+    region: 'Street Food Nationale',
+    description: 'Le combo légendaire des matins et soirs du Cameroun : beignets croustillants et dorés, mijoté de haricots rouges fondants aux oignons caramélisés et piment doux.',
+    price: 2500,
+    image: 'https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'doux',
+    prepTime: '10 min',
+    popular: true,
+    vegetarian: true,
+    tags: ['Street Food Culte', 'Croustillant', 'Gourmandise Populaire']
+  },
+  {
+    id: 'pastels-poisson',
+    name: 'Duo de Pastels Croquants au Poisson Fumé',
+    category: 'entrees',
+    region: 'Douala',
+    description: 'Chaussons dorés et croustillants garnis d\'une farce savoureuse de capitaine fumé, herbes fraîches et aromates de Penja, accompagnés de sauce dip rougail tomate pimentée.',
+    price: 3000,
+    image: 'https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'moyen',
+    prepTime: '12 min',
+    tags: ['Apéritif', 'Croustillant', 'Fait Maison']
+  },
+
+  // --- BOISSONS DU TERROIR ---
+  {
+    id: 'folere-menthe-gingembre',
+    name: 'Jus de Foléré Maison (Bissap Bio & Menthe)',
+    category: 'boissons',
+    region: 'Grand Nord & Littoral',
+    description: 'Infusion fraîche de fleurs d\'hibiscus sabdariffa du Nord Cameroun, infusée aux feuilles de menthe fraîche, zeste d\'orange douce et pointe stimulante de gingembre frais.',
+    price: 1500,
+    image: 'https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'doux',
+    prepTime: '5 min',
+    popular: true,
+    tags: ['Boisson Artisanale', '100% Naturel', 'Ultra Rafraîchissant']
+  },
+  {
+    id: 'jus-baobab-gourmand',
+    name: 'Nectar Onctueux de Pain de Singe (Baobab)',
+    category: 'boissons',
+    region: 'Nord Cameroun',
+    description: 'Pulpe naturelle de fruit du baobab riche en vitamine C, émulsionnée au lait crémeux, une larme d\'eau de fleur d\'oranger et vanille douce.',
+    price: 2000,
+    image: 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'doux',
+    prepTime: '5 min',
+    tags: ['Super-aliment', 'Onctueux', 'Vitamine C']
+  },
+  {
+    id: 'cocktail-saveurs-safou',
+    name: 'Cocktail Signature "Le Wouri Sunset"',
+    category: 'boissons',
+    region: 'Douala Lounge',
+    description: 'Création maison : purée de mangue sauvage mûre, jus d\'ananas victoria pressé, ginger ale, sirop de canne au poivre vert et trait de rhum ambré des îles (ou version sans alcool).',
+    price: 3500,
+    image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'doux',
+    prepTime: '5 min',
+    tags: ['Signature Bar', 'Exotique', 'Frais']
+  },
+
+  // --- DESSERTS DU TERROIR ---
+  {
+    id: 'beignets-souffles-coco',
+    name: 'Beignets Soufflés au Caramel de Coco & Penja',
+    category: 'desserts',
+    region: 'Littoral',
+    description: 'Petits beignets dorés moelleux comme un nuage, saupoudrés de sucre roux et accompagnés d\'un coulis tiède de caramel au lait de coco infusé à une pincée de poivre blanc doux.',
+    price: 2500,
+    image: 'https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'doux',
+    prepTime: '10 min',
+    popular: true,
+    vegetarian: true,
+    tags: ['Douceur Sucrée', 'Caramel Coco', 'Moelleux']
+  },
+  {
+    id: 'carpaccio-ananas-penja',
+    name: 'Carpaccio d\'Ananas Victoria Rôti & Sorbet Mangue',
+    category: 'desserts',
+    region: 'Penja & Sud',
+    description: 'Fines lamelles d\'ananas caramélisées au beurre doux et miel de savane, relevées de brisures de poivre blanc de Penja fraîchement moulu et boule de sorbet mangue artisanale.',
+    price: 3000,
+    image: 'https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=900&q=80',
+    spiceLevel: 'doux',
+    prepTime: '10 min',
+    vegetarian: true,
+    tags: ['Léger & Fruité', 'Poivre de Penja', 'Sorbet Artisanal']
+  }
+];
+
+export const CATEGORIES = [
+  { id: 'tous', label: 'Toute la Carte' },
+  { id: 'menus_terroir', label: '🇨🇲 Menus Typiques du Cameroun' },
+  { id: 'royaux', label: 'Plats Royaux & Sauces' },
+  { id: 'braises', label: 'Braises & Grillades de Kribi' },
+  { id: 'entrees', label: 'Entrées & Tapas' },
+  { id: 'boissons', label: 'Jus Naturels & Cocktails' },
+  { id: 'desserts', label: 'Desserts du Terroir' }
+] as const;
+
+export const RESTAURANT_INFO = {
+  name: "Les Saveurs d'Afrique",
+  tagline: "Le Sanctuaire de la Haute Gastronomie Camerounaise",
+  subtitle: "Une cuisine d'auteur aux racines fières, cuisinée aux feux de bois et parfumée aux plus belles épices du Cameroun.",
+  phone: "+237 698 62 14 38",
+  orangeMoneyNumber: "698621438",
+  orangeMoneyHolder: "Les Saveurs d'Afrique Sarl",
+  email: "contact@saveursdafrique-resto.com",
+  address: "Quartier Bonapriso (face Clinique Soppo), Douala - Cameroun",
+  secondaryAddress: "Espace VIP Bastos, Yaoundé",
+  openingHours: [
+    { days: "Lundi - Jeudi", hours: "11h30 - 23h00" },
+    { days: "Vendredi - Samedi", hours: "11h30 - 01h00 (Soirées Braises & Live Jazz)" },
+    { days: "Dimanche", hours: "12h00 - 22h30 (Buffet Royal dominical)" }
+  ],
+  stats: {
+    satisfiedGuests: "14 000+",
+    recipesMastered: "45+",
+    yearsHeritage: "18 ans",
+    averageRating: "4.9/5"
+  }
+};
