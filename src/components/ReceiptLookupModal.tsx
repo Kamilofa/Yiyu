@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Search, X, Receipt, CheckCircle2, ArrowRight, ShieldCheck, AlertCircle } from 'lucide-react';
 import { Order } from '../types/restaurant';
 
+import { searchOrdersInSupabase } from '../lib/supabase';
+
 interface ReceiptLookupModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -19,8 +21,9 @@ export const ReceiptLookupModal: React.FC<ReceiptLookupModalProps> = ({
 
   const [searchQuery, setSearchQuery] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg('');
 
@@ -30,7 +33,8 @@ export const ReceiptLookupModal: React.FC<ReceiptLookupModalProps> = ({
       return;
     }
 
-    const found = recentOrders.find(
+    // 1. First check local memory
+    const foundLocal = recentOrders.find(
       (ord) =>
         ord.id.toLowerCase().includes(q) ||
         (ord.receiptNumber && ord.receiptNumber.toLowerCase().includes(q)) ||
@@ -38,12 +42,27 @@ export const ReceiptLookupModal: React.FC<ReceiptLookupModalProps> = ({
         ord.transactionRef.toLowerCase().includes(q)
     );
 
-    if (found) {
-      onSelectOrder(found);
+    if (foundLocal) {
+      onSelectOrder(foundLocal);
       onClose();
-    } else {
-      setErrorMsg('Aucun reçu correspondant trouvé. Veuillez vérifier votre code ou numéro Orange Money.');
+      return;
     }
+
+    // 2. Search in Supabase cloud database
+    setIsSearching(true);
+    try {
+      const supabaseResults = await searchOrdersInSupabase(q);
+      setIsSearching(false);
+      if (supabaseResults && supabaseResults.length > 0) {
+        onSelectOrder(supabaseResults[0]);
+        onClose();
+        return;
+      }
+    } catch {
+      setIsSearching(false);
+    }
+
+    setErrorMsg('Aucun reçu correspondant trouvé ni en local ni sur Supabase. Vérifiez le code ou le numéro Orange Money.');
   };
 
   return (
@@ -101,10 +120,20 @@ export const ReceiptLookupModal: React.FC<ReceiptLookupModalProps> = ({
 
           <button
             type="submit"
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-orange-950/50 active:scale-98 transition-all"
+            disabled={isSearching}
+            className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-orange-950/50 active:scale-98 transition-all disabled:opacity-50"
           >
-            <Search className="w-4 h-4 text-black" />
-            <span>Afficher Mon Reçu Officiel</span>
+            {isSearching ? (
+              <>
+                <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+                <span>Recherche dans Supabase...</span>
+              </>
+            ) : (
+              <>
+                <Search className="w-4 h-4 text-black" />
+                <span>Afficher Mon Reçu Officiel</span>
+              </>
+            )}
           </button>
         </form>
 

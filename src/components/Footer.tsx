@@ -1,8 +1,12 @@
 import React from 'react';
-import { UtensilsCrossed, Phone, Mail, MapPin, Clock, ShieldCheck, Heart, ArrowUp } from 'lucide-react';
+import { UtensilsCrossed, Phone, Mail, MapPin, Clock, ShieldCheck, Heart, ArrowUp, Database } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/dishes';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenSupabaseSql?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenSupabaseSql }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -80,6 +84,17 @@ export const Footer: React.FC = () => {
               <li><a href="#galerie" className="hover:text-amber-400 transition-colors">Galerie Photos</a></li>
               <li><a href="#avis" className="hover:text-amber-400 transition-colors">Avis Clients</a></li>
               <li><a href="#histoire" className="hover:text-amber-400 transition-colors">Notre Histoire</a></li>
+              {onOpenSupabaseSql && (
+                <li>
+                  <button
+                    onClick={onOpenSupabaseSql}
+                    className="hover:text-emerald-300 text-emerald-400 transition-colors flex items-center gap-1.5 cursor-pointer font-medium"
+                  >
+                    <Database className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Base Supabase (Table commandes SQL)</span>
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
 

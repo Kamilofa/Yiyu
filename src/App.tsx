@@ -16,11 +16,13 @@ import { ReviewsSection } from './components/ReviewsSection';
 import { AboutSection } from './components/AboutSection';
 import { OfficialReceiptModal } from './components/OfficialReceiptModal';
 import { ReceiptLookupModal } from './components/ReceiptLookupModal';
+import { SupabaseSqlModal } from './components/SupabaseSqlModal';
 import { Footer } from './components/Footer';
 import { AudioPlayer } from './components/AudioPlayer';
 import { Dish, CartItem, Order, SpiceLevel } from './types/restaurant';
 import { DISHES } from './data/dishes';
-import { Check, ShoppingBag, ShieldCheck, Receipt } from 'lucide-react';
+import { saveOrderToSupabase } from './lib/supabase';
+import { Check, ShoppingBag, ShieldCheck, Receipt, Database } from 'lucide-react';
 
 export default function App() {
   // Cart state
@@ -38,6 +40,7 @@ export default function App() {
   const [selectedDish, setSelectedDish] = useState<Dish | null>(null);
   const [confirmedOrder, setConfirmedOrder] = useState<Order | null>(null);
   const [isReceiptLookupOpen, setIsReceiptLookupOpen] = useState(false);
+  const [isSupabaseSqlModalOpen, setIsSupabaseSqlModalOpen] = useState(false);
   const [quickToast, setQuickToast] = useState<string | null>(null);
 
   // Past orders for receipt retrieval
@@ -59,10 +62,19 @@ export default function App() {
     }
   }, [pastOrders]);
 
-  const handleOrderCreated = (order: Order) => {
+  const handleOrderCreated = async (order: Order) => {
+    // 1. Save to local state and trigger official receipt modal
     setPastOrders((prev) => [order, ...prev]);
     setConfirmedOrder(order);
     showNotification(`Commande ${order.id} validée ! Reçu officiel généré.`);
+
+    // 2. Persist order to Supabase PostgreSQL table
+    const result = await saveOrderToSupabase(order);
+    if (result.success) {
+      showNotification(`✓ Commande synchronisée dans Supabase (table commandes)`);
+    } else {
+      console.info('Info Supabase (vérifiez la table):', result.error);
+    }
   };
 
   // Save cart changes
@@ -163,6 +175,7 @@ export default function App() {
         onOpenCart={() => setIsCartOpen(true)}
         onOpenReservation={() => scrollToSection('reservation')}
         onOpenReceiptLookup={() => setIsReceiptLookupOpen(true)}
+        onOpenSupabaseSql={() => setIsSupabaseSqlModalOpen(true)}
       />
 
       {/* Main Sections */}
@@ -204,7 +217,7 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer onOpenSupabaseSql={() => setIsSupabaseSqlModalOpen(true)} />
 
       {/* Ambient Lounge Sound Toggle */}
       <AudioPlayer />
@@ -273,6 +286,12 @@ export default function App() {
         onClose={() => setIsReceiptLookupOpen(false)}
         recentOrders={pastOrders}
         onSelectOrder={(ord) => setConfirmedOrder(ord)}
+      />
+
+      {/* Supabase SQL Code & Connection Modal */}
+      <SupabaseSqlModal
+        isOpen={isSupabaseSqlModalOpen}
+        onClose={() => setIsSupabaseSqlModalOpen(false)}
       />
 
     </div>

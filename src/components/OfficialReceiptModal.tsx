@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, ShieldCheck, Printer, MessageSquare, X, Clock, MapPin, Truck, Copy, Check, Download, Utensils, QrCode } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, Printer, MessageSquare, X, Clock, MapPin, Truck, Copy, Check, Download, Utensils, QrCode, Database } from 'lucide-react';
 import { Order } from '../types/restaurant';
 import { RESTAURANT_INFO } from '../data/dishes';
 
@@ -225,11 +225,17 @@ Veuillez confirmer la réception et le départ en livraison. Merci !`;
               </div>
             </div>
 
-            <div className="bg-black/50 px-3 py-1.5 rounded-xl border border-orange-500/30 text-right">
-              <span className="text-[10px] text-amber-200/50 uppercase block">Règlement</span>
-              <span className="text-emerald-400 font-bold text-xs flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                Vérifié avec succès
+            <div className="flex flex-col items-end gap-1.5">
+              <div className="bg-black/50 px-3 py-1.5 rounded-xl border border-orange-500/30 text-right">
+                <span className="text-[10px] text-amber-200/50 uppercase block">Règlement</span>
+                <span className="text-emerald-400 font-bold text-xs flex items-center gap-1">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  Vérifié avec succès
+                </span>
+              </div>
+              <span className="text-[10px] text-emerald-300/90 bg-emerald-950/70 px-2 py-0.5 rounded border border-emerald-500/30 flex items-center gap-1">
+                <Database className="w-3 h-3 text-emerald-400" />
+                Synchronisé Supabase Cloud
               </span>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { UtensilsCrossed, ShoppingBag, Calendar, Phone, Menu, X, Sparkles, ShieldCheck, Receipt } from 'lucide-react';
+import { UtensilsCrossed, ShoppingBag, Calendar, Phone, Menu, X, Sparkles, ShieldCheck, Receipt, Database } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/dishes';
 
 interface NavbarProps {
@@ -7,6 +7,7 @@ interface NavbarProps {
   onOpenCart: () => void;
   onOpenReservation: () => void;
   onOpenReceiptLookup: () => void;
+  onOpenSupabaseSql?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -14,6 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenCart,
   onOpenReservation,
   onOpenReceiptLookup,
+  onOpenSupabaseSql,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -40,7 +42,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="hidden sm:inline text-amber-200/80">Spécialités des 10 régions du Cameroun</span>
           </div>
 
-          <div className="flex items-center gap-4 ml-auto">
+          <div className="flex items-center gap-3 ml-auto">
+            {onOpenSupabaseSql && (
+              <button
+                onClick={onOpenSupabaseSql}
+                className="hidden sm:flex items-center gap-1.5 bg-emerald-950/70 hover:bg-emerald-900 border border-emerald-500/40 rounded-full px-2.5 py-0.5 text-[11px] text-emerald-300 hover:text-white transition-colors cursor-pointer"
+                title="Voir le code SQL Supabase et vérifier la connexion"
+              >
+                <Database className="w-3 h-3 text-emerald-400" />
+                <span>Supabase SQL</span>
+              </button>
+            )}
+
             <div className="flex items-center gap-1.5 bg-orange-500/15 border border-orange-500/30 rounded-full px-2.5 py-0.5 text-[11px] text-orange-300">
               <ShieldCheck className="w-3.5 h-3.5 text-orange-400" />
               <span>Orange Money : <strong className="text-white tracking-wide">698621438</strong></span>

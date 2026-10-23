@@ -60,8 +60,8 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onSelectDish, onQuickA
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
             Notre Carte <span className="gold-gradient-text">Gourmande</span>
           </h2>
-          <p className="text-sm sm:text-base text-amber-200/70 font-light">
-            Découvrez nos spécialités cuisinées aux épices nobles du Cameroun. Chaque plat est préparé avec des ingrédients frais du terroir et servi avec l'accompagnement de votre choix.
+          <p className="text-sm sm:text-base text-amber-200/80 font-light">
+            Découvrez nos spécialités typiquement camerounaises cuisinées aux épices nobles du pays. Des portions copieuses et savoureuses à tarif populaire : <strong className="text-amber-400 font-bold">1 500 FCFA ou 2 000 FCFA</strong> seulement !
           </p>
         </div>
 

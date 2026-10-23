@@ -26,8 +26,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onExploreMenu }) 
                 <Sparkles className="w-3 h-3 text-black" />
                 Cuisine 100% Camerounaise
               </span>
+              <span className="text-amber-300 font-bold bg-amber-500/20 px-2 py-0.5 rounded-full border border-amber-500/40 text-[11px]">
+                1 500F ou 2 000F
+              </span>
               <span className="text-amber-300/90 font-medium hidden sm:inline">
-                Épices de Penja IGP & Braises Naturelles
+                Épices de Penja IGP & Braises
               </span>
             </div>
 
@@ -160,7 +163,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onExploreMenu }) 
                 <div className="p-5 space-y-3 bg-[#16100a]">
                   <div className="flex items-center justify-between text-xs text-amber-300/80 pb-3 border-b border-amber-900/40">
                     <span>⏱️ Temps de préparation : <strong>25 min</strong></span>
-                    <span className="text-amber-400 font-black text-base">6 500 FCFA</span>
+                    <span className="text-amber-400 font-black text-base">2 000 FCFA</span>
                   </div>
                   
                   <div className="flex items-center justify-between gap-2">
