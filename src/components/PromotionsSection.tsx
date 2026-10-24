@@ -81,7 +81,7 @@ export const PromotionsSection: React.FC<PromotionsSectionProps> = ({ onOrderPro
           </h2>
 
           <p className="text-sm sm:text-base text-amber-200/80 font-light">
-            Savourez les plus belles spécialités typiquement camerounaises en formules généreuses à tarif populaire : <strong className="text-amber-400 font-bold">1 500 FCFA et 2 000 FCFA</strong> seulement !
+            Savourez les plus belles spécialités typiquement camerounaises certifiées à tarif populaire : <strong className="text-amber-400 font-bold">1 000 FCFA et 1 500 FCFA</strong> seulement !
           </p>
 
           {/* Real-time Expiration Countdown Bar */}

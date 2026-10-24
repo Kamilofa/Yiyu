@@ -77,19 +77,54 @@ export const DishModal: React.FC<DishModalProps> = ({ dish, onClose, onAddToCart
         {/* Modal Body / Scrollable */}
         <div className="p-6 overflow-y-auto space-y-6 flex-1 text-sm text-amber-100/90">
           
+          {/* Fiche & Description */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400 mb-1">
-              Description & Recette
-            </h4>
-            <p className="text-amber-200/80 leading-relaxed text-sm">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="px-2.5 py-1 rounded-md bg-amber-500 text-black text-[11px] font-extrabold uppercase">
+                Fiche N° {dish.ficheNumber}
+              </span>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                Fiche Officielle & Recette
+              </h4>
+            </div>
+            <p className="text-amber-200/90 leading-relaxed text-sm bg-[#1b140d] p-3.5 rounded-xl border border-amber-900/40">
               {dish.description}
             </p>
           </div>
 
+          {/* Strict Ingrédients list */}
+          {dish.ingredients && dish.ingredients.length > 0 && (
+            <div className="space-y-2">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                Ingrédients Authentiques Certifiés :
+              </h4>
+              <div className="flex flex-wrap gap-1.5">
+                {dish.ingredients.map((ing) => (
+                  <span
+                    key={ing}
+                    className="text-xs bg-amber-950/60 border border-amber-700/50 text-amber-200 px-2.5 py-1 rounded-lg"
+                  >
+                    ✓ {ing}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Strict Forbidden clause */}
+          {dish.forbidden && (
+            <div className="p-3 bg-red-950/50 border border-red-800/60 rounded-xl text-xs text-red-200 flex items-start gap-2">
+              <span className="font-extrabold text-red-400 uppercase tracking-wider shrink-0">
+                Règle stricte :
+              </span>
+              <span className="font-semibold italic text-red-200">{dish.forbidden}</span>
+            </div>
+          )}
+
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5">
             {dish.tags.map((tag) => (
-              <span key={tag} className="text-xs bg-amber-950/60 border border-amber-800/40 text-amber-300 px-2.5 py-0.5 rounded-md">
+              <span key={tag} className="text-xs bg-black/60 border border-amber-800/40 text-amber-300 px-2.5 py-0.5 rounded-md">
                 #{tag}
               </span>
             ))}

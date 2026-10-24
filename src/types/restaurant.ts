@@ -2,28 +2,30 @@ export type SpiceLevel = 'doux' | 'moyen' | 'tres_pimente';
 
 export type DishCategory = 
   | 'tous'
-  | 'menus_terroir'
-  | 'royaux'
-  | 'braises'
-  | 'entrees'
-  | 'accompagnements'
-  | 'boissons'
-  | 'desserts';
+  | 'sauces_feuilles'
+  | 'braises_grillades'
+  | 'vapeur_tradition'
+  | 'soupes_piles'
+  | 'prix_1000'
+  | 'prix_1500';
 
 export interface Dish {
   id: string;
   name: string;
+  ficheNumber: number;
   category: DishCategory;
   region: string;
   description: string;
-  price: number; // in FCFA (XAF)
+  ingredients: string[];
+  forbidden: string;
+  price: number; // strictly 1000 or 1500 FCFA
   image: string;
   spiceLevel: SpiceLevel;
   prepTime: string;
   popular?: boolean;
   chefSpecial?: boolean;
   vegetarian?: boolean;
-  availableAccompaniments?: string[];
+  availableAccompaniments: string[];
   tags: string[];
 }
 

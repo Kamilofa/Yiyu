@@ -27,7 +27,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onExploreMenu }) 
                 Cuisine 100% Camerounaise
               </span>
               <span className="text-amber-300 font-bold bg-amber-500/20 px-2 py-0.5 rounded-full border border-amber-500/40 text-[11px]">
-                1 500F ou 2 000F
+                1 000F ou 1 500F
               </span>
               <span className="text-amber-300/90 font-medium hidden sm:inline">
                 Épices de Penja IGP & Braises
