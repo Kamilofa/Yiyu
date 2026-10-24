@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <div className="flex items-center gap-1.5 bg-orange-500/15 border border-orange-500/30 rounded-full px-2.5 py-0.5 text-[11px] text-orange-300">
               <ShieldCheck className="w-3.5 h-3.5 text-orange-400" />
-              <span>Orange Money : <strong className="text-white tracking-wide">698621438</strong></span>
+              <span>Orange Money : <strong className="text-white tracking-wide">{RESTAURANT_INFO.orangeMoneyNumber}</strong></span>
             </div>
             <a 
               href={`tel:${RESTAURANT_INFO.phone}`} 
@@ -224,7 +224,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               Orange Money Direct :
             </span>
             <span className="font-bold text-white bg-orange-500/20 px-2 py-0.5 rounded border border-orange-500/30">
-              698621438
+              {RESTAURANT_INFO.orangeMoneyNumber}
             </span>
           </div>
         </div>

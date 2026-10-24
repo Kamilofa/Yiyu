@@ -8,7 +8,7 @@ export const INITIAL_REVIEWS: Review[] = [
     rating: 5,
     date: '18 Octobre 2026',
     dishTasted: 'Bar Entier Braisé façon Kribi & Bobolo',
-    comment: 'Sans doute le meilleur bar braisé de tout Douala ! La marinade au poivre de Penja pénètre la chair jusqu\'à l\'arête centrale. Le bobolo est ultra frais, et le piment rouge a du caractère sans brûler le palais. Paiement Orange Money au 698621438 passé en 10 secondes.',
+    comment: 'Sans doute le meilleur bar braisé de tout Douala ! La marinade au poivre de Penja pénètre la chair jusqu\'à l\'arête centrale. Le bobolo est ultra frais, et le piment rouge a du caractère sans brûler le palais. Paiement Orange Money au 693205278 passé en 10 secondes.',
     verified: true,
     recommended: true,
     likes: 42,

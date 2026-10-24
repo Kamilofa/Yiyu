@@ -48,7 +48,7 @@ Mode          : ${order.deliveryType.toUpperCase()}
 ${order.deliveryAddress ? `Adresse       : ${order.deliveryAddress}\n` : ''}----------------------------------------
 PAIEMENT CERTIFIÉ :
 Mode          : ORANGE MONEY CAMEROUN
-Numéro OM     : 698621438
+Numéro OM     : 693205278
 Titulaire     : ${RESTAURANT_INFO.orangeMoneyHolder}
 Réf Transac   : ${order.transactionRef}
 ----------------------------------------
@@ -58,7 +58,7 @@ ${itemsText}
 TOTAL RÉGLÉ   : ${order.totalAmount.toLocaleString('fr-FR')} FCFA
 ========================================
 Restaurant Bonapriso, Douala & Bastos, Yaoundé
-Tél / WhatsApp : +237 698 62 14 38
+Tél / WhatsApp : +237 693 20 52 78
 Merci de votre confiance en la gastronomie camerounaise !
 ========================================`;
   };
@@ -79,14 +79,14 @@ Voici mon REÇU OFFICIEL DE VALIDATION DE COMMANDE :
 📍 Mode : ${order.deliveryType.toUpperCase()} ${order.deliveryAddress ? `(${order.deliveryAddress})` : ''}
 💰 Total Payé : ${order.totalAmount.toLocaleString('fr-FR')} FCFA
 📱 Réf Orange Money : ${order.transactionRef}
-💳 Réglé au numéro OM : 698621438
+💳 Réglé au numéro OM : 693205278
 
 Détail des menus typiques :
 ${order.items.map(i => `- ${i.quantity}x ${i.dish.name} [${i.selectedAccompaniment || 'Standard'}]`).join('\n')}
 
 Veuillez confirmer la réception et le départ en livraison. Merci !`;
 
-    return `https://wa.me/237698621438?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/237693205278?text=${encodeURIComponent(msg)}`;
   };
 
   return (
@@ -133,7 +133,7 @@ Veuillez confirmer la réception et le départ en livraison. Merci !`;
             <div className="absolute right-0 top-0 hidden sm:flex flex-col items-center justify-center w-28 h-28 rounded-full border-2 border-dashed border-emerald-500/70 p-2 text-center text-emerald-400 rotate-[-12deg] bg-emerald-950/20 pointer-events-none">
               <span className="text-[8px] font-black tracking-widest uppercase">★ CERTIFIÉ ★</span>
               <span className="text-[10px] font-extrabold leading-tight">COMMANDE VALIDÉE</span>
-              <span className="text-[7px] text-emerald-300 font-mono mt-0.5">ORANGE MONEY 698621438</span>
+              <span className="text-[7px] text-emerald-300 font-mono mt-0.5">ORANGE MONEY 693205278</span>
             </div>
 
             <div className="flex items-center justify-center gap-2">
@@ -149,7 +149,7 @@ Veuillez confirmer la réception et le départ en livraison. Merci !`;
               Haute Gastronomie & Braises Typiquement Camerounaises
             </p>
             <p className="text-[11px] text-amber-200/60 max-w-md mx-auto">
-              Quartier Bonapriso (Douala) • Espace VIP Bastos (Yaoundé) • Tél: +237 698 62 14 38
+              Quartier Bonapriso (Douala) • Espace VIP Bastos (Yaoundé) • Tél: +237 693 20 52 78
             </p>
           </div>
 
@@ -217,7 +217,7 @@ Veuillez confirmer la réception et le départ en livraison. Merci !`;
                   Paiement Mobile Encaissé
                 </span>
                 <p className="font-bold text-white text-xs">
-                  Orange Money : <strong className="font-mono text-orange-400">698621438</strong>
+                  Orange Money : <strong className="font-mono text-orange-400">693205278</strong>
                 </p>
                 <p className="font-mono text-[11px] text-orange-200/70">
                   Réf SMS : {order.transactionRef}

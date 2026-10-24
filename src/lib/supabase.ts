@@ -190,7 +190,7 @@ export async function searchOrdersInSupabase(query: string): Promise<Order[]> {
       deliveryAddress: row.adresse_livraison || undefined,
       notes: row.notes || undefined,
       paymentMethod: row.mode_paiement || 'orange_money',
-      orangeMoneyPhone: row.orange_money_phone || '698621438',
+      orangeMoneyPhone: row.orange_money_phone || '693205278',
       transactionRef: row.transaction_ref,
       createdAt: new Date(row.date_commande || row.created_at).toLocaleTimeString('fr-FR', {
         hour: '2-digit',

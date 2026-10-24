@@ -106,8 +106,8 @@ Personnes : ${res.guestsCount}
 Date : ${res.date} à ${res.time}
 Espace : ${res.seatingArea.toUpperCase()}
 Occasion : ${res.occasion}
-Orange Money du resto : 698621438`;
-    return `https://wa.me/237698621438?text=${encodeURIComponent(text)}`;
+Orange Money du resto : 693205278`;
+    return `https://wa.me/237693205278?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -174,7 +174,7 @@ Orange Money du resto : 698621438`;
             <div className="bg-orange-950/40 border border-orange-500/30 rounded-xl p-3 text-xs text-orange-200 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-orange-400 shrink-0" />
-                <span>Pour prépayer des boissons ou un gâteau : <strong>Orange Money 698621438</strong></span>
+                <span>Pour prépayer des boissons ou un gâteau : <strong>Orange Money 693205278</strong></span>
               </div>
             </div>
 

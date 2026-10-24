@@ -266,13 +266,13 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#FF7900] to-orange-600 hover:from-orange-500 hover:to-orange-500 text-black font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-orange-950/60 transition-all cursor-pointer active:scale-95"
                 >
                   <ShieldCheck className="w-4 h-4 text-black" />
-                  <span>Payer avec Orange Money (698621438)</span>
+                  <span>Payer avec Orange Money ({RESTAURANT_INFO.orangeMoneyNumber})</span>
                   <ArrowRight className="w-4 h-4 text-black" />
                 </button>
 
                 <p className="text-[10px] text-center text-amber-200/50 flex items-center justify-center gap-1">
                   <span>Numéro officiel :</span>
-                  <strong className="text-orange-400 font-mono">698621438</strong>
+                  <strong className="text-orange-400 font-mono">{RESTAURANT_INFO.orangeMoneyNumber}</strong>
                   <span>• Validation immédiate</span>
                 </p>
               </div>

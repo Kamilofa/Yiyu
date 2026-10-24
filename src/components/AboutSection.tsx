@@ -21,7 +21,7 @@ export const AboutSection: React.FC = () => {
     },
     {
       icon: <ShieldCheck className="w-5 h-5 text-orange-400" />,
-      title: "Orange Money Direct : 698621438",
+      title: "Orange Money Direct : 693205278",
       desc: "Réglez vos commandes à distance ou sur place en toute sérénité. Encaissement instantané sans complications."
     }
   ];
@@ -110,7 +110,7 @@ export const AboutSection: React.FC = () => {
                 </div>
               </div>
               <div className="shrink-0 bg-orange-500/15 border border-orange-500/30 px-3 py-1.5 rounded-xl text-orange-300 font-mono font-bold text-xs">
-                OM: 698621438
+                OM: 693205278
               </div>
             </div>
 

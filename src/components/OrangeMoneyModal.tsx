@@ -37,7 +37,7 @@ export const OrangeMoneyModal: React.FC<OrangeMoneyModalProps> = ({
   const [errorMsg, setErrorMsg] = useState('');
   const [isVerifying, setIsVerifying] = useState(false);
 
-  // OM USSD code standard Cameroon: *150*1*1*698621438*AMOUNT#
+  // OM USSD code standard Cameroon: *150*1*1*693205278*AMOUNT#
   const ussdCode = `*150*1*1*${RESTAURANT_INFO.orangeMoneyNumber}*${totalAmount}#`;
 
   const handleCopyUSSD = () => {

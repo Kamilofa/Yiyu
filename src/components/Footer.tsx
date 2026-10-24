@@ -62,7 +62,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenSupabaseSql }) => {
               <div className="flex items-center justify-between">
                 <span className="text-xs text-white">Numéro Marchand :</span>
                 <strong className="text-sm font-mono text-white bg-black/60 px-2.5 py-0.5 rounded border border-orange-500/40 tracking-wider">
-                  698621438
+                  {RESTAURANT_INFO.orangeMoneyNumber}
                 </strong>
               </div>
               <p className="text-[10px] text-amber-200/50">
@@ -139,12 +139,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenSupabaseSql }) => {
 
               <div className="pt-2">
                 <a
-                  href={`https://wa.me/237698621438?text=${encodeURIComponent("Bonjour Les Saveurs d'Afrique ! J'aimerais avoir des renseignements sur le menu et les réservations.")}`}
+                  href={`https://wa.me/237693205278?text=${encodeURIComponent("Bonjour Les Saveurs d'Afrique ! J'aimerais avoir des renseignements sur le menu et les réservations.")}`}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors cursor-pointer"
                 >
-                  <span>WhatsApp Direct (+237 698 62 14 38)</span>
+                  <span>WhatsApp Direct (+237 693 20 52 78)</span>
                 </a>
               </div>
             </div>

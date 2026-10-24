@@ -265,7 +265,7 @@ export const PromotionsSection: React.FC<PromotionsSectionProps> = ({ onOrderPro
                 </span>
               </div>
               <h4 className="font-serif text-lg font-bold text-white mt-0.5">
-                Validez vos promotions directement au 698621438
+                Validez vos promotions directement au 693205278
               </h4>
               <p className="text-xs text-amber-200/70">
                 Gagnez du temps : pas besoin de monnaie liquide à la livraison. Votre commande est préparée immédiatement dès confirmation SMS.

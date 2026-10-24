@@ -59,11 +59,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservation, onExploreMenu }) 
                   <span className="text-[11px] text-emerald-400 font-medium">Validé instantanément</span>
                 </div>
                 <p className="text-xs text-amber-200/90 mt-0.5">
-                  Commandes & réservations payables directement par <strong className="text-white">Orange Money au 698621438</strong>
+                  Commandes & réservations payables directement par <strong className="text-white">Orange Money au 693205278</strong>
                 </p>
               </div>
               <div className="bg-orange-600/20 border border-orange-500/40 px-3 py-1.5 rounded-lg text-orange-300 text-xs font-mono font-bold tracking-wider">
-                698621438
+                693205278
               </div>
             </div>
 

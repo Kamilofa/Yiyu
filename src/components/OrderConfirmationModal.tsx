@@ -27,14 +27,14 @@ Client : ${order.customerName} (${order.customerPhone})
 Mode : ${order.deliveryType.toUpperCase()}
 ${order.deliveryAddress ? `Adresse : ${order.deliveryAddress}\n` : ''}Total réglé : ${order.totalAmount.toLocaleString('fr-FR')} FCFA
 Réf Transaction OM : ${order.transactionRef}
-Payé au : 698621438
+Payé au : 693205278
 
 Détail des plats :
 ${itemsList}
 
 Merci de lancer la préparation !`;
 
-    return `https://wa.me/237698621438?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/237693205278?text=${encodeURIComponent(msg)}`;
   };
 
   return (
@@ -88,7 +88,7 @@ Merci de lancer la préparation !`;
             </div>
             <div className="text-right">
               <span className="text-[10px] text-amber-200/60 block uppercase">Destinataire</span>
-              <span className="font-mono font-bold text-white text-xs">698621438</span>
+              <span className="font-mono font-bold text-white text-xs">693205278</span>
             </div>
           </div>
 

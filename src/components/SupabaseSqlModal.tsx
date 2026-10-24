@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS public.commandes (
     plats JSONB NOT NULL,                                     -- Liste détaillée des plats
     total_montant NUMERIC(12, 2) NOT NULL,                    -- Montant total réglé en FCFA
     mode_paiement TEXT NOT NULL DEFAULT 'orange_money',       -- Moyen de paiement
-    orange_money_phone TEXT NOT NULL DEFAULT '698621438',     -- Numéro OM (698621438)
+    orange_money_phone TEXT NOT NULL DEFAULT '693205278',     -- Numéro OM (693205278)
     transaction_ref TEXT,                                     -- Référence SMS Orange Money
     statut TEXT NOT NULL DEFAULT 'paye',                      -- 'paye', 'en_preparation', 'livre'
     notes TEXT,                                               -- Instructions spéciales
